@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(214, 19%, 25%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --orange: hsl(25, 97%, 53%);
+  --mobile-size: 375px;
+  --desktop-size: 1440px;
+  --font-size: 0.9375rem;
+  --font-family: "Overpass", sans-serif;
+  --transition: all ease 0.4s;
+  --transition2: all ease 0.8s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background: var(--very-dark-blue);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: transparent;
+  width: 26rem;
+  height: 26rem;
+  perspective: 1000px;
+  padding: 0 0.6rem;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: var(--transition2);
+  transform-style: preserve-3d;
+}
+
+.card {
+  max-width: 26rem;
+  background: var(--dark-blue);
+  padding: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.3rem;
+  transition: var(--transition2);
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card__star {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--medium-grey);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.card__title {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.card__caption {
+  color: var(--light-grey);
+  font-size: var(--font-size);
+  font-weight: 400;
+  text-align: start;
+}
+
+.card__ratings {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card__ratings-item {
+  color: var(--light-grey);
+  font-weight: 700;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.card__ratings-item:hover {
+  color: var(--white);
+  background: var(--light-grey);
+}
+
+.active {
+  color: var(--white);
+  background: var(--orange);
+}
+
+.card__submit {
+  background: var(--orange);
+  outline: none;
+  border-radius: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 0.8rem 0.5rem;
+  width: 100%;
+  transition: var(--transition);
+}
+
+.card__submit:hover {
+  background: var(--white);
+  color: var(--orange);
+}
+
+.card,
+.card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+.card__back {
+  display: flex;
+  transform: rotateY(180deg);
+  align-items: center;
+}
+
+.card__back-ratings {
+  color: var(--orange);
+  font-weight: 400;
+  background: var(--medium-grey);
+  padding: 0.2rem 0.9rem;
+  text-align: center;
+  border-radius: 0.9rem;
+  font-size: var(--font-size);
+}
+
+.card__back-title {
+  color: var(--white);
+}
+
+.card__back-caption {
+  color: var(--light-grey);
+  text-align: center;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+  </head>
+  <body>
+    <main>
+      <div class="inner">
+        <div class="card">
+          <div class="card__star">
+            <img src="./images/icon-star.svg" alt="star icon" class="card__star-img" />
+          </div>
+          <h1 class="card__title">How did we do?</h1>
+          <p class="card__caption">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+          <ul class="card__ratings">
+            <li class="card__ratings-item card__star">1</li>
+            <li class="card__ratings-item card__star">2</li>
+            <li class="card__ratings-item card__star">3</li>
+            <li class="card__ratings-item card__star">4</li>
+            <li class="card__ratings-item card__star">5</li>
+          </ul>
+          <button class="card__submit">submit</button>
+        </div>
+        <div class="card__back card">
+          <img src="./images/illustration-thank-you.svg" alt="thank you image" class="card__back-img" />
+          <h2 class="card__back-ratings">You selected 4 out of 5</h2>
+          <h3 class="card__back-title">Thank you!</h3>
+          <p class="card__back-caption">We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
